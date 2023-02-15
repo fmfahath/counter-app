@@ -11,6 +11,13 @@ class Counter extends Component {
         }
      }; 
 
+     style = {
+        padding: 5,
+        fontSize: 15,
+        fontWeight: "bold",
+        borderRadius: '50%',
+     };
+
 
      //Method of Component class
      formatCount(){
@@ -47,7 +54,7 @@ class Counter extends Component {
         return (
             <div>
                 <p></p>
-                <span className='bg-primary m-2'>{this.formatCount()}</span>
+                <span style={this.style} className='bg-primary m-2'>{this.formatCount()}</span>
                 <button className='btn btn-secondary btn-sm'>Increment</button>
             </div>
         );
