@@ -4,15 +4,16 @@ class Counter extends Component {
      
     //property of Component class - state is a Special property - [its an object]
     state = {   
-        count: 0,    //propery
-        address:{   //propery
+        count: 0,    //property
+        imgUrl: "https://picsum.photos/200",
+        address:{   //property
             HomeNo: "",
             Street: "",
         }
      }; 
 
 
-     //Methods of Component class
+     //Method of Component class
      formatCount(){
         const {count} = this.state; //object de-structure
         // return this.state.count === 0 ? "Zero" : this.state.count;
@@ -47,6 +48,7 @@ class Counter extends Component {
         return (
             <div>
                 {/* <span>{this.state.count}</span> */} 
+                <img src={this.state.imgUrl} alt="" />
                 <span>{this.formatCount()}</span>
                 <button>Increment</button>
             </div>
