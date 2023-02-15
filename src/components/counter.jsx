@@ -52,16 +52,19 @@ class Counter extends Component {
 
      render(){
 
-        let badgeColourClass = "m-2 ";
-        badgeColourClass += this.state.count === 0 ? "bg-warning" : "bg-primary";
-
         return (
             <div>
                 <p></p>
-                <span style={this.style} className={badgeColourClass}>{this.formatCount()}</span>
+                <span style={this.style} className={this.getbadgeColourClass()}>{this.formatCount()}</span>
                 <button className='btn btn-secondary btn-sm'>Increment</button>
             </div>
         );   
+    }
+
+    getbadgeColourClass() {
+        let badgeColourClass = "m-2 ";
+        badgeColourClass += this.state.count === 0 ? "bg-warning" : "bg-primary";
+        return badgeColourClass;
     }
 }
  
