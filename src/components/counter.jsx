@@ -5,10 +5,7 @@ class Counter extends Component {
     //property of Component class - state is a Special property - [its an object]
     state = {   
         count: 0,    //property
-        address:{   //property
-            HomeNo: "",
-            Street: "",
-        }
+        tags: ["tag1","tag2","tag3"],
      }; 
 
      style = {
@@ -22,33 +19,8 @@ class Counter extends Component {
      //Method of Component class
      formatCount(){
         const {count} = this.state; //object de-structure
-        // return this.state.count === 0 ? "Zero" : this.state.count;
         return count === 0 ? "Zero" : count;
-
-        // const x = <h1>Zero</h1>;
-        // return count === 0 ? <h1>Zero</h1> : count;
-        // return count === 0 ? x : count;
-
      }
-
-     //---------------------------------------------------------------------------------
-
-    // render() { 
-    //     return <div><h1>Hello React.js</h1><button>Increment</button></div>;
-    // }
-
-    //------------------------------------------------------------------------------------
-
-    // render(){
-    //     return (
-    //         <React.Fragment>
-    //             <h1>Hello React.js</h1>
-    //             <button>Increment</button>
-    //         </React.Fragment>
-    //     );
-    // }
-
-     //------------------------------------------------------------------------------------
 
      render(){
 
@@ -57,6 +29,10 @@ class Counter extends Component {
                 <p></p>
                 <span style={this.style} className={this.getbadgeColourClass()}>{this.formatCount()}</span>
                 <button className='btn btn-secondary btn-sm'>Increment</button>
+                <br></br>
+                <br></br>
+                <ul>{this.state.tags.map(tag => <li key={tag}>{tag}</li>)}</ul>
+
             </div>
         );   
     }
