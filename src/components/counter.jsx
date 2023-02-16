@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class Counter extends Component { 
      
-    //property of Component class - state is a Special property - [its an object]
+    //property of Component class - state is a Specialondumilla property - [its an object]
     state = {   
         count: 0,    //property
         tags: ["tag1","tag2","tag3"],
@@ -22,17 +22,18 @@ class Counter extends Component {
         return count === 0 ? "Zero" : count;
      }
 
-     handleIncrement(){
-        console.log("increment btn clicked");
+     handleIncrement = product =>{
+        console.log(product);
+        this.setState({count: this.state.count + 1});  
      }
-
+ 
      render(){
 
         return (
             <div>
                 <p></p>
                 <span style={this.style} className={this.getbadgeColourClass()}>{this.formatCount()}</span>
-                <button onClick={this.handleIncrement} className='btn btn-secondary btn-sm'>Increment</button>
+                <button onClick={() => this.handleIncrement({id:1})} className='btn btn-secondary btn-sm'>Increment</button>
                 <br></br>
                 <br></br>
                 <ul>{this.state.tags.map(tag => <li key={tag}>{tag}</li>)}</ul>
