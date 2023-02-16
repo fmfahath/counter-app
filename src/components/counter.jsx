@@ -5,7 +5,6 @@ class Counter extends Component {
     //property of Component class - state is a Specialondumilla property - [its an object]
     state = {   
         count: 0,    //property
-        tags: ["tag1","tag2","tag3"],
      }; 
 
      style = {
@@ -35,9 +34,6 @@ class Counter extends Component {
                 <span style={this.style} className={this.getbadgeColourClass()}>{this.formatCount()}</span>
                 <button onClick={() => this.handleIncrement({id:1})} className='btn btn-secondary btn-sm'>Increment</button>
                 <br></br>
-                <br></br>
-                <ul>{this.state.tags.map(tag => <li key={tag}>{tag}</li>)}</ul>
-
             </div>
         );   
     }
