@@ -4,7 +4,8 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals' ;
 import 'bootstrap/dist/css/bootstrap.css' //import bootstrap
-import Counters from './components/counters'; //import Counter class
+// import Counter from './components/counter'; //import Counter class
+import Counters from './components/counters'; //import Counters class
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
