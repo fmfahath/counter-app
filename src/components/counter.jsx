@@ -4,7 +4,7 @@ class Counter extends Component {
      
     //property of Component class - state is a Specialondumilla property - [its an object]
     state = {   
-        value: this.props.value,    //property
+        count: this.props.value,    //property
      }; 
 
      style = {
@@ -14,15 +14,24 @@ class Counter extends Component {
         borderRadius: 10,
      };
 
+     style_btn = {
+        margin: 5,
+        backgroundColor: "red",
+     };
+
 
      //Method of Component class
      formatCount(){
-        const {value: count} = this.state; //object de-structure
+        const {count} = this.state; //object de-structure
         return count === 0 ? "Zero" : count;
      }
 
      handleIncrement(){
-        this.setState({count: this.state.value + 1});  
+        this.setState({count: this.state.count + 1});  
+     }
+
+     handleDecrement(){
+        this.setState({count: this.state.count - 1});  
      }
  
      render(){ 
@@ -32,6 +41,7 @@ class Counter extends Component {
                 <p></p>
                 <span style={this.style} className={this.getbadgeColourClass()}>{this.formatCount()}</span>
                 <button onClick={() => this.handleIncrement()} className='btn btn-secondary btn-sm'>Increment</button>
+                <button style={this.style_btn} onClick={() => this.handleDecrement()} className='btn btn-secondary btn-sm'>Decrement</button>
                 <br></br>
             </div>
         );    
@@ -39,7 +49,7 @@ class Counter extends Component {
 
     getbadgeColourClass() {
         let badgeColourClass = "m-2 ";
-        badgeColourClass += this.state.value === 0 ? "bg-warning" : "bg-primary";
+        badgeColourClass += this.state.count === 0 ? "bg-warning" : "bg-primary";
         return badgeColourClass;
     }
 }
